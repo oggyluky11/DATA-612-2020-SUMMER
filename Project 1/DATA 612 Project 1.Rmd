@@ -45,6 +45,7 @@ In this project, a simple recommender system of McDonald's Combo Meals is create
 
 # Load Packages
 ```{r message=FALSE, warning=FALSE}
+library(rmdformats)
 library(tidyverse)
 library(knitr)
 library(kableExtra)
@@ -57,7 +58,7 @@ library(gplots)
 
 # Read Data
 ```{r message=FALSE, warning=FALSE}
-data <- read_csv('https://raw.githubusercontent.com/oggyluky11/DATA-612-2020-SUMMER/master/Project%201/McDoland%20Meal%20Friend%20Rating.csv')
+data <- read_csv('https://raw.githubusercontent.com/oggyluky11/DATA-612-2020-SUMMER/master/Project%201/McDonald%20Meal%20Friend%20Rating.csv')
 
 data
 ```
