@@ -1,0 +1,79 @@
+---
+title: "Data_612_Discussion_1"
+author: "Fan Xu"
+date: "7/14/2020"
+output:
+  rmdformats::readthedown:
+    code_folding: hide
+    df_print: paged
+    highlight: tango
+    number_sections: no
+    smooth_scroll: yes
+    theme: united
+    toc_collapsed: yes
+    toc_depth: 5
+    toc_float: yes
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_collapsed: yes
+    toc_float: yes
+  pdf_document:
+    extra_dependencies:
+    - geometry
+    - multicol
+    - multirow
+  word_document:
+    toc: yes
+    toc_depth: '5'
+theme: lumen
+number_sections: yes
+toc_depth: 3
+---
+
+# Questions
+
+## Part I
+Now that we have covered basic techniques for recommender systems, choose one commercial recommender and describe how you think it works (content-based, collaborative filtering, etc). Does the technique deliver a good experience or are the recommendations off-target?
+
+You may also choose one of the three non-personalized recommenders (below) we went over in class and describe the technique and which of the three you prefer to use.
+
+1. Metacritic:  How We Create the Metascore Magic
+2. Rotten Tomatoes: About Rotten Tomatoes
+3. IMDB: FAQ for IMDb Ratings
+Please complete the research discussion assignment in a Jupyter or R Markdown notebook. You should post the GitHub link to your research in a new discussion thread.
+
+## Part II
+Attacks on Recommender System
+
+Read the article below and consider how to handle attacks on recommender systems. Can you think of a similar example where a collective effort to alter the workings of content recommendations have been successful? How would you design a system to prevent this kind of abuse?
+
+Travis M. Andrews, The Washington Post (2017): Wisdom of the crowd? IMDb users gang up on Christian Bale’s new movie before it even opens.
+
+# Answers
+
+## Part I
+Amazon is now one of the largest shopping sites in the world with a history of 25 years. According to reports, Its revenue in the first fiscal quarter of 2020 was $75.5 billion, which was one of the most successful e-merchants. With hundreds of millions of users, Amazon has a huge database to store user records in order to generate recommender systems. User's gender, age, search history, browsing history, order history, wish list, and location are all recorded in Amazon's database for recommender system analysis.
+
+Amazon has a content-based recommender system. By collecting user records, Amazon provides recommendations based on those viewed and purchased items, such as "Related to items you've viewed", "inspired by your shopping trends", and "inspired by your purchases". These three sections automatically provide recommendations from different categories. In my Amazon account, it recommends figures in "Related to items you've viewed", model kits in "inspired by your shopping trends", and home essentials in "inspired by your purchases". They are all related to the products I browsed or purchased, so Amazon offers different categories of attractive recommendations in different sections.
+
+Amazon has a user-based recommender system. By comparing the order history between users, Amazon provides recommendations to users based on what other similar users browsed, purchased, or favorited, such as the "recommended items other customers often buy again" section, and "trending items near you" section which used users' location.
+
+Amazon also offers recommendations by category, gender and age. By dividing products into different categories, such as Home, Movies & Music, Electronics, Food & Grocery, Beauty & Health, Amazon offers recommendations to users by category based on product ratings, number of purchases, click-through rates, and conversion rates. Amazon also offers gift recommendations "For her", "For him", "For teens", and "For kids".
+
+In addition to the above content, Amazon also has a section called "Get yourself a little something" on its homepage after login, which mainly focuses on the contents that users have seen but not purchased.
+
+Overall, Amazon's recommender system gives me great user experience, which saves my time searching for interesting products and gives gift inspirations for friends, not to mention its Prime membership with fast delivery and better customer service.
+
+## Reference
+1. <https://venturebeat.com/2020/04/30/amazon-earnings-q1-2020/#:~:text=Amazon%20today%20reported%20earnings%20for,of%20%247.09%20in%20Q1%202019).>
+
+## Part II
+One example of attacks on recommender systems is fake reviews on Amazon. The ratings of some Amazon products are severely distorted by many fake reviews. Buyer experiences are affected by counterfeit products, delay or missing delivery, and poor customer service. I sometimes see that some products have a 5-star rating with short and suspicious comments left within a short period of time, or third-party sellers have many 1-star ratings but there are some suspicious 5-star ratings to pull up the average rating of the store. When users believe these ratings and made purchases without going through the comments, they may end up having poor user experiences. Amazon has also lost a lot of money on this issue.
+
+In order to solve this problem, we can apply methods to detect such attacks. For example, we can detect rating patterns, detect the length of comments, detect large deviation from the average rating of seller, and calculate the degree of similarity with Top Neighbors. In addition, we can give "badge" or "title" to long-term users who always give long and informative reviews to acknowledge his/her reviews being trustworthy so that other users can have a better understanding of the product. Large deviation from average rating and from the similarity with Top Neighbors may indicate fraud and further action may be taken by the system on these reviews.
+
+## Reference
+1. <https://www.washingtonpost.com/technology/2019/11/14/how-amazons-quest-more-cheaper-products-has-resulted-flea-market-fakes/>
+
+2. <http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.60.1540&rep=rep1&type=pdf>

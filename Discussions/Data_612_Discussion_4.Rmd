@@ -1,0 +1,53 @@
+---
+title: "Data_612_Discussion_4"
+author: "Fan Xu"
+date: "7/15/2020"
+output:
+  rmdformats::readthedown:
+    code_folding: hide
+    df_print: paged
+    highlight: tango
+    number_sections: no
+    smooth_scroll: yes
+    theme: united
+    toc_collapsed: yes
+    toc_depth: 5
+    toc_float: yes
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_collapsed: yes
+    toc_float: yes
+  pdf_document:
+    extra_dependencies:
+    - geometry
+    - multicol
+    - multirow
+  word_document:
+    toc: yes
+    toc_depth: '5'
+theme: lumen
+number_sections: yes
+toc_depth: 3
+---
+
+# Question
+Mitigating the Harm of Recommender Systems
+
+Read one or more of the articles below and consider how to counter the radicalizing effects of recommender systems or ways to prevent algorithmic discrimination.
+
+Renee Diresta, Wired.com (2018): Up Next: A Better Recommendation System
+
+Zeynep Tufekci, The New York Times (2018): YouTube, the Great Radicalizer
+
+Sanjay Krishnan, Jay Patel, Michael J. Franklin, Ken Goldberg (n/a): Social Influence Bias in Recommender Systems: A Methodology for Learning, Analyzing, and Mitigating Bias in Ratings
+
+# Answer
+Recommender system provides recommendations based on the predictions calculated from the database, which contains users' browsing history, purchase history preferences, profiles, and product contents. Prediction is mainly based on the similarities of users and products. Recommending items with high similarities may cause some degree of "repetition", like a voice echo. Especially when a recommender system uses collaborative filtering, it combines users' browsing or purchase history with contents of products, provides recommendations that are similar to the products in user records. Users end up in a loop of all similar products, like echoes in a valley. It is important for companies to implement strategies to prevent and mitigate human bias.
+
+Recommender system can detect bias from the beginning. Sensitive information should be handled with caution in the detection approaches. For example, recommender systems should not consider race and gender when recruiting, and can even remove these two fields when collecting resumes. Applicants living far away from the company should also be considered in the recruitment process if they are willing to relocate. Names may also reflect the race of candidates, the system can number the candidates instead of showing HR department the candidates' name, thus further preventing the occurrence of human bias.
+
+Recommender system can also provide multiple categories of recommendations and allow users to rate/edit the recommendations. When users have finished watching a video on YouTube, YouTube's recommender system will provide user with at least ten recommendations to continue watching. Instead of giving all ten similar videos in the same category, we can offer two to ten different categories of videos. For example, if I watch the latest released music video of an American singer, the system can recommend me the singer's concert, the singer's news, another American singer's popular video, or other categories' trending videos. Next to each recommendation, YouTube can ask users to rate or edit the recommendation. This gives users an opportunity to remove recommendations they do not like, and the system can take this information into account in future recommendations. Instead of walking along the echo corridor (staying in the loop of similar videos in the same category), users can also redirect themselves to different video categories that interest them.
+
+# Reference
+<https://www.brookings.edu/research/algorithmic-bias-detection-and-mitigation-best-practices-and-policies-to-reduce-consumer-harms/>

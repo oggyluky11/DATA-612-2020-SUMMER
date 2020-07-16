@@ -1,0 +1,55 @@
+---
+title: "Data_612_Discussion_3"
+author: "Fan Xu"
+date: "7/15/2020"
+output:
+  rmdformats::readthedown:
+    code_folding: hide
+    df_print: paged
+    highlight: tango
+    number_sections: no
+    smooth_scroll: yes
+    theme: united
+    toc_collapsed: yes
+    toc_depth: 5
+    toc_float: yes
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_collapsed: yes
+    toc_float: yes
+  pdf_document:
+    extra_dependencies:
+    - geometry
+    - multicol
+    - multirow
+  word_document:
+    toc: yes
+    toc_depth: '5'
+theme: lumen
+number_sections: yes
+toc_depth: 3
+---
+
+# Question
+As more systems and sectors are driven by predictive analytics, there is increasing awareness of the possibility and pitfalls of algorithmic discrimination. In what ways do you think Recommender Systems reinforce human bias? Reflecting on the techniques we have covered, do you think recommender systems reinforce or help to prevent unethical targeting or customer segmentation?  Please provide one or more examples to support your arguments.
+
+A few resources:
+
+Evan Estola (2016): When Recommendations Systems Go Bad; MLconf SEA 2016
+
+Rishabh Jain (2016): When Recommendation Systems Go Bad
+
+Moritz Hardt, Eric Price, Nathan Srebro (2016):  Equality of Opportunity in Supervised Learning 
+
+# Answer
+Recommender system provides recommendations based on the predictions calculated from the database, which contains users' browsing history, purchase history preferences, profiles, and product contents. Prediction is mainly based on the similarities of users and products. Recommending items with high similarities may cause some degree of "repetition", like a voice echo. Especially when a recommender system uses collaborative filtering, it combines users' browsing or purchase history with contents of products, provides recommendations that are similar to the products in user records. Users end up in a loop of all similar products, like echoes in a valley. This is how recommender systems reinforce human bias.
+
+Recommender systems may reinforce unethical targeting or customer segmentation in some way. As a machine, it has no concept of “ethical” or “unethical”. The system can only work according to the way the algorithm created, which is entirely up to the programmer. If the programmer does not add bias prevention methods or even adds bias into the algorithm, it may cause great concern. Assuming we are talking about a very common and general recommender system without intentionally adding bias, we can still find examples where it leads to human bias or segmentation.
+
+We can find bias in online recruiting tools. Amazon is one of the largest online retailers, with 60% of its global employees being men, who occupy 74% of the company's managerial positions. This is due to their gender-biased recruiting algorithm, which Amazon discontinued using when it discovered the problem. According to the sustem analysis, the company is predominantly male engineering and therefore it considers similar candidates to be "suitable" candidates. The algorithm recommends new candidates that are similar to those previously hired or current employees in the team leads to the segmentation problem of specific groups, here is the gender group.
+
+# Reference
+1. <https://www.brookings.edu/research/algorithmic-bias-detection-and-mitigation-best-practices-and-policies-to-reduce-consumer-harms/>
+
+2. <https://www.searchenginejournal.com/biases-search-recommender-systems/339319/#close>

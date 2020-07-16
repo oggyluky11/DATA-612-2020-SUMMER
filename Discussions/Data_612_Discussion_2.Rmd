@@ -1,0 +1,51 @@
+---
+title: "Data_612_Discussion_2"
+author: "Fan Xu"
+date: "7/14/2020"
+output:
+  rmdformats::readthedown:
+    code_folding: hide
+    df_print: paged
+    highlight: tango
+    number_sections: no
+    smooth_scroll: yes
+    theme: united
+    toc_collapsed: yes
+    toc_depth: 5
+    toc_float: yes
+  html_document:
+    df_print: paged
+    toc: yes
+    toc_collapsed: yes
+    toc_float: yes
+  pdf_document:
+    extra_dependencies:
+    - geometry
+    - multicol
+    - multirow
+  word_document:
+    toc: yes
+    toc_depth: '5'
+theme: lumen
+number_sections: yes
+toc_depth: 3
+---
+
+# Question
+For this discussion item, please watch the following talk and summarize what you found to be the most important or interesting points. The first half will cover some of the mathematical techniques covered in this unit's reading and the second half some of the data management challenges in an industrial-scale recommendation system.
+
+Music Recommendations at Scale with Spark - Christopher Johnson (Spotify)  
+Duration: 26:29  
+User: n/a - Added: 7/17/14  
+YouTube URL: <http://www.youtube.com/watch?v=3LBgiFch4_g>  
+
+# Answer
+The Spark Summit 2014 talk mainly focused on Spotify's recommender system and I would like to cover some important or interest points from it. A good recommender system is to provide users with recommendations that are attractive and interesting to them. Spotify collects users' song history, playlists, favorites/likes, purchase history, and other information. They then analyzes all the information collected in the database to form a recommender system with recommendations that match with each individual user's interests. Spotify has four categories of recommendations from its millions of songs: personalized recommendations, radio songs, related artist songs, and songs that are now playing.
+
+Spotify recommender system mainly adopts implicit matrix factorization method. Unlike the explicit matrix factorization method which relies on users' explicit movie ratings from one star to five stars, Spotify implicitly uses users' listening history to infer what songs they like. They use binary tags of 1 or 0 to indicate whether the user has streamed the song at least once or never streamed the song. Then, the total number of streams is used as the weights to minimize the weighted root mean square error (RMSE).
+
+Spotify applies the alternating least squares (ALS) to their recommender system. ALS algorithm factorizes the given matrix (database) into two factor matrices so that the product of the two factor matrices is approximately equal to the original matrix. In order to find the two factor matrices, the system alternates back and forth between them and solves the least square regression.
+
+Another interesting thing is that Spotify first used Hadoop to generate its recommender system, but switched to Spark in 2014. The difficulty of using Hadoop is that when the database becomes huge, Hadoop cannot be executed smoothly and takes up too much memory. Spark is faster and consumes less memory by loading the rating matrix into cache memory (RAM). It uses a method called full gridify. Full gridify decomposes a huge matrix into many small blocks, loads them into memory, caches them, and joins related matrices for processing and solving.
+
+In the video, the presenter also mentioned a method called half gridify, which works faster than full gridify. However, if the dimension of the original matrix (the database) is too large, half gridify may break. As a result, Spotify's recommender system eventually uses the full gridify approach, which takes about 3.5hrs processing time and is much faster than that of using Hadoop, which is 10hrs.
